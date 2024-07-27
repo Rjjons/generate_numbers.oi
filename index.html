@@ -98,9 +98,10 @@ margin-top: 10px;
     </div>
 
     <script>
+
     function generate(){
       function getRandomSegment(val) {
-        return Math.floor(Math.random() * 10000).toString().padStart(val, '0');
+        return Math.floor(Math.random() * 10000).toString().padStart(val, '0'); 
     }
 
     let segment1 = getRandomSegment(4);
@@ -108,10 +109,10 @@ margin-top: 10px;
     let segment3 = getRandomSegment(4);
     let segment4 = getRandomSegment(3);
 
-    return `${segment1}-${segment2}-${segment3}-${segment4}`;      
+    return `${segment1}-${segment2}-${segment3}-${segment4}`;     
     }
-      
-      let result = '';
+      let result = ''; 
+
     function generateRechargeCard(){
         
     const network = document.getElementById("network").value;
@@ -139,7 +140,7 @@ margin-top: 10px;
       
     }
     
-    function mtn(network,deno,qty){
+    function mtn(network, deno, qty){
     for(let i = 0; i < qty; i++ ){
     result += `
       <div class="card-container">
@@ -154,38 +155,48 @@ margin-top: 10px;
     document.getElementById("output").innerHTML=result;
     }
     
-    // function glo(network,deno,qty){
-    // result = `
-    //   <div class="card-container">
-    // <p><b>Network:</b>GLO</p>
-    // <p><b>Amount:</b>${deno}</p>
-    // <p><b>PIN:</b>72667-882772-2277-8737</p>
-    // </div>
-    //   `
-    // document.getElementById("output").innerHTML=result;
-    // }
+    function glo(network,deno,qty){
+      for (let i = 0; i < qty; i++){
+        result += `
+      <div class="card-container">
+    <p><b>Network:</b>GLO</p>
+    <p><b>Amount:</b>${deno}</p>
+    <p><b>PIN:</b>${generate()}</p>
+    </div>
+      `
+
+      }
     
-    // function airtel(network,deno,qty){
-    // result = `
-    //   <div class="card-container">
-    // <p><b>Network:</b>Airtel</p>
-    // <p><b>Amount:</b>${deno}</p>
-    // <p><b>PIN:</b>72667-882772-2277-8737</p>
-    // </div>
-    //   `
-    // document.getElementById("output").innerHTML=result;
-    // }
+    document.getElementById("output").innerHTML=result;
+    }
     
-    // function nineMobile(network,deno,qty){
-    // result = `
-    //   <div class="card-container">
-    // <p><b>Network:</b>9mobile</p>
-    // <p><b>Amount:</b>${deno}</p>
-    // <p><b>PIN:</b>72667-882772-2277-8737</p>
-    // </div>
-    //   `
-    // document.getElementById("output").innerHTML=result;
-    // }
+    function airtel(network,deno,qty){
+      for(i = 0; i < qty; i++){
+
+        result += `
+      <div class="card-container">
+    <p><b>Network:</b>Airtel</p>
+    <p><b>Amount:</b>${deno}</p>
+    <p><b>PIN:</b>${generate()}</p>
+    </div>
+      `
+      }
+    
+    document.getElementById("output").innerHTML=result;
+    }
+    
+    function nineMobile(network,deno,qty){
+    for (i = 0; i < qty; i++){
+      result += `
+      <div class="card-container">
+    <p><b>Network:</b>9mobile</p>
+    <p><b>Amount:</b>${deno}</p>
+    <p><b>PIN:</b>${generate()}</p>
+    </div>
+      `
+    }
+    document.getElementById("output").innerHTML=result;
+    }
     </script>
 
     
