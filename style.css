@@ -49,6 +49,13 @@ body {
   .card-container {
     height: auto;
     width: 250px;
-    border: 1px solid rgb(22, 15, 15);
+    border: 1px solid rgb(233, 93, 93);
     margin-top: 10px;
+    margin-left: 5px;
+    padding-left: 15px;
+    border-radius: 2px;
+    color: #144e20;
+    
   }
+
+  
